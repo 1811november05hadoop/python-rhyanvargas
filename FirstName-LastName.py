@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 
 '''
 Revature is building a new API! This API contains functions for validating data, 
@@ -37,7 +37,8 @@ Happy Scripting!
 '''
 Use the main function for testing purposes and to show me results for all functions.
 '''
-def main():
+def main():  
+        reverse('example')
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -49,7 +50,11 @@ Rules:
 param: str
 return: str
 '''
-def reverse(string):
+def reverse(s):
+        str = ""
+        for i in s:
+                str = i + str
+        print(str)
 
 '''
 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
@@ -60,6 +65,7 @@ param: str
 return: str
 '''
 def acronym(phrase):
+        print('test')   
 
 '''
 3. Determine if a triangle is equilateral, isosceles, or scalene. An
@@ -73,6 +79,7 @@ param: float, float, float
 return: str -> 'equilateral', 'isoceles', 'scalene'
 '''
 def whichTriangle(sideOne, sideTwo, sideThree):
+        print('test')   
 
 
 '''
@@ -91,6 +98,7 @@ param: str
 return: int
 '''
 def scrabble(word):
+        print('test')   
 
 '''
 5. An Armstrong number is a number that is the sum of its own digits each
@@ -108,6 +116,7 @@ param: int
 return: bool
 '''
 def armstrong(number):
+        print('test')   
 
 '''
 6. Compute the prime factors of a given natural number.
@@ -119,7 +128,8 @@ Note that 1 is not a prime number.
 param: int
 return: list
 '''
-def primeFactors(number)
+def primeFactors(number):
+        print('test')   
 
 '''
 7. Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
@@ -135,6 +145,7 @@ param: str
 return: bool
 '''
 def pangram(sentence):
+        print('test')   
 
 '''
 8. Sort list of integers.
@@ -148,6 +159,7 @@ param: list
 return: list
 '''
 def sort(numbers):
+        print('test')   
 
 '''
 9. Create an implementation of the rotational cipher, also sometimes called
@@ -179,6 +191,7 @@ param: int, str
 return: str
 '''
 def rotate(key, string):
+        print('test')   
 
 '''
 10. Take 10 numbers as input from the user and store all the even numbers in a file called even.txt and
@@ -188,6 +201,7 @@ param: none, from the keyboard
 return: nothing
 '''
 def evenAndOdds():
+        print('test')   
 
-if __name__ == "__main__"
-    main()
+if __name__ == "__main__":
+        main()
