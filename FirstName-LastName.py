@@ -40,6 +40,10 @@ Use the main function for testing purposes and to show me results for all functi
 def main():  
         reverse('example')
         acronym('Portable Network Graphics')
+        whichTriangle(2,2,2) #equi
+        whichTriangle(1,2,2) #isoceles
+        whichTriangle(2,1,2) #isoceles
+        whichTriangle(3,2,1) #scalene
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -83,8 +87,6 @@ def acronym(phrase):
         #         i = i + 1
         # acronym = ''.join(acronym)
         # print(acronym)
-       
-
 '''
 3. Determine if a triangle is equilateral, isosceles, or scalene. An
 equilateral triangle has all three sides the same length. An isosceles
@@ -97,7 +99,13 @@ param: float, float, float
 return: str -> 'equilateral', 'isoceles', 'scalene'
 '''
 def whichTriangle(sideOne, sideTwo, sideThree):
-        print('test')   
+        if sideOne == sideTwo and sideTwo == sideThree:
+                result = 'equilateral'
+        elif sideOne == sideThree or sideTwo == sideThree or sideOne == sideTwo:
+                result = 'Isoceles'
+        else :
+                result = 'scalene'
+        print(result)   
 
 
 '''
