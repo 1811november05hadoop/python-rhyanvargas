@@ -39,6 +39,7 @@ Use the main function for testing purposes and to show me results for all functi
 '''
 def main():  
         reverse('example')
+        acronym('Portable Network Graphics')
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -65,7 +66,24 @@ param: str
 return: str
 '''
 def acronym(phrase):
-        print('test')   
+        output = ''
+        seperate_words = phrase.split(' ')
+        for char in seperate_words:
+                output = output + char[0]
+        print(output)
+        ### FIRST CODE ###
+        # acronym = []
+        # whitespace = ' '
+        # i = 0
+        # if phrase[0]:
+        #         acronym.append(phrase[0])
+        # for char in phrase:
+        #         if char == whitespace and i < len(phrase):
+        #                 acronym.append(phrase[i + 1])
+        #         i = i + 1
+        # acronym = ''.join(acronym)
+        # print(acronym)
+       
 
 '''
 3. Determine if a triangle is equilateral, isosceles, or scalene. An
