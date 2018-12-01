@@ -45,6 +45,9 @@ def main():
         whichTriangle(2,1,2) #isoceles
         whichTriangle(3,2,1) #scalene
         scrabble("lebowski") #13
+        armstrong(153)
+        armstrong(9)
+        armstrong(154)
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -183,7 +186,21 @@ param: int
 return: bool
 '''
 def armstrong(number):
-        print('test')   
+        number_string = str(number)
+        output = []
+        is_armstrong = False
+        sum = 0
+        number_of_digits = len(str(number))
+
+        for digit in number_string:
+                output = output + digit.split(' ')
+                digit = int(digit)
+                sum = sum + (digit**(number_of_digits))
+        if sum == number:
+                is_armstrong = True
+                print(str(is_armstrong) + ', THIS IS AN ARMSTRONG NUMBER!')
+        else:
+                print(str(is_armstrong) + ', NOT AN ARMSTRONG NUMBER!')
 
 '''
 6. Compute the prime factors of a given natural number.
