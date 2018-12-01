@@ -44,6 +44,7 @@ def main():
         whichTriangle(1,2,2) #isoceles
         whichTriangle(2,1,2) #isoceles
         whichTriangle(3,2,1) #scalene
+        scrabble("lebowski") #13
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -124,7 +125,47 @@ param: str
 return: int
 '''
 def scrabble(word):
-        print('test')   
+        score = 0
+        onePoint = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T']
+        twoPoints = ['D', 'G']
+        threePoints = ['B', 'C', 'M', 'P']
+        fourPoints = ['F', 'H', 'V', 'W', 'Y', ]
+        fivePoints = 'K'
+        eightPoints = ['J','X']
+        tenPoints = ['Q', 'Z']
+        word = word.upper()
+        for letter in word:
+                if letter in onePoint:
+                        score = score + 1
+                        print(letter,end=', ')
+                        print(score)
+                elif letter in twoPoints:
+                        score = score + 2
+                        print(letter,end=', ')
+                        print(score)
+                elif letter in threePoints:
+                        score = score + 3
+                        print(letter,end=', ')
+                        print(score)
+                elif letter in fourPoints:
+                        score = score + 4
+                        print(letter,end=', ')
+                        print(score)
+                elif letter in fivePoints:
+                        score = score + 5
+                        print(letter,end=', ')
+                        print(score)
+                elif letter in eightPoints:
+                        score = score + 8
+                        print(letter,end=', ')
+                        print(score)
+                elif letter in tenPoints:
+                        score = score + 10
+                        print(letter,end=', ')
+                        print(score)
+                else:
+                        print("NOT A LETTER! = 0 points")
+        print('Your total score is: ' + str(score))
 
 '''
 5. An Armstrong number is a number that is the sum of its own digits each
