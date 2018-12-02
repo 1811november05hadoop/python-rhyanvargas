@@ -1,5 +1,6 @@
 
 
+from collections import Counter
 '''
 Revature is building a new API! This API contains functions for validating data, 
 solving problems, and encoding data. 
@@ -37,6 +38,9 @@ Happy Scripting!
 '''
 Use the main function for testing purposes and to show me results for all functions.
 '''
+import re
+from collections import Counter
+
 def main():  
         reverse('example')
         acronym('Portable Network Graphics')
@@ -48,6 +52,10 @@ def main():
         armstrong(153)
         armstrong(9)
         armstrong(154)
+        # primeFactors(52)  # [1, 2, 4, 13, 26, 52]
+        # primeFactors(24)  # [1, 2, 4, 13, 26, 52]
+        pangram("The quick brown fox jumps over the lazy dog")
+        pangram("abc def g")
 
 '''
 1. Reverse a String. Example: reverse("example"); -> "elpmaxe"
@@ -209,11 +217,22 @@ A prime number is only evenly divisible by itself and 1.
  
 Note that 1 is not a prime number.
 
+EX:  Prime numbe 52 and its factors  [1, 2, 4, 13, 26, 52] 
 param: int
 return: list
 '''
 def primeFactors(number):
-        print('test')   
+        factors = []
+        prime_factors = []
+        
+        for divisible_num in range(1,number + 1):
+                if  number % divisible_num == 0:
+                        factors.append(divisible_num)
+                        for factor in range(1,len(factors)):
+                                if factor % 2 == 0:
+                                        prime_factors.append(factor)
+        # print(factors)   
+        # print(prime_factors)
 
 '''
 7. Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
@@ -229,7 +248,17 @@ param: str
 return: bool
 '''
 def pangram(sentence):
-        print('test')   
+        alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}
+        sentence_split = sentence.upper().replace(" ", "")
+        sentence = set()
+        for i in sentence_split:
+                sentence.add(i)
+        intersection = alphabet.intersection(sentence)
+        if len(intersection) == len(alphabet):
+                print('The sentence is a PANAGRAM')
+        else:        
+                print('The sentence is NOT a PANAGRAM')
 
 '''
 8. Sort list of integers.
